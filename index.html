@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flying Pumas AI Strategy Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --fp-primary: #2d5016;
+            --fp-secondary: #4a7c59;
+            --fp-accent: #6db33f;
+            --fp-neutral-50: #fafbfc;
+            --fp-neutral-100: #f5f7fa;
+            --fp-neutral-600: #616e7c;
+            --fp-neutral-900: #212529;
+            --fp-white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--fp-neutral-50) 0%, var(--fp-white) 100%);
+            color: var(--fp-neutral-900);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .header { text-align: center; margin-bottom: 3rem; }
+
+        .logo-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--fp-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--fp-neutral-600);
+            margin-bottom: 1rem;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: var(--fp-neutral-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--fp-white);
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--fp-neutral-100);
+        }
+
+        .stat-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--fp-primary);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--fp-neutral-600);
+            margin-top: 0.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: var(--fp-white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--fp-neutral-100);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--fp-accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--fp-primary);
+            margin-bottom: 1rem;
+        }
+
+        .card-description {
+            color: var(--fp-neutral-600);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--fp-primary);
+            color: var(--fp-white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #234110;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: var(--fp-neutral-100);
+            color: var(--fp-neutral-900);
+        }
+
+        .btn-secondary:hover {
+            background: var(--fp-neutral-600);
+            color: var(--fp-white);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--fp-neutral-100);
+            color: var(--fp-neutral-600);
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--fp-neutral-600);
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+
+        .github-link:hover { color: var(--fp-primary); }
+
+        @media (max-width: 768px) {
+            .logo-title { font-size: 2.5rem; }
+            .container { padding: 1rem; }
+            .grid { grid-template-columns: 1fr; }
+            .stats { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="logo-title">Flying Pumas</h1>
+            <p class="subtitle">AI Strategy & Business Intelligence Hub</p>
+            <p class="description">
+                Centro de análisis estratégico para Flying Pumas Coffee Farm. Dashboard ejecutivo
+                con datos consolidados, análisis de portfolio optimizado, y estrategia dual-marca
+                para alcanzar $34.50/lb promedio ponderado y meta $843K en 2026.
+            </p>
+        </header>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">$1.58M</div>
+                <div class="stat-label">Ventas Consolidadas</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">118</div>
+                <div class="stat-label">Clientes Únicos</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">$11.33</div>
+                <div class="stat-label">Precio Actual/lb</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">$34.50</div>
+                <div class="stat-label">Meta Precio/lb</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">-67%</div>
+                <div class="stat-label">Gap vs Meta</div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3 class="card-title">Dashboard Ejecutivo</h3>
+                <p class="card-description">
+                    Panel estratégico con 6 módulos: análisis dual-marca consolidado,
+                    evolución temporal, gestión de clientes, proyecciones 2026,
+                    y estrategia de rebalanceo hacia mix óptimo 44.5%/55.5%.
+                </p>
+                <a href="dashboard/flying_pumas_executive_dashboard_fixed.html" class="btn">
+                    Abrir Dashboard
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📈</div>
+                <h3 class="card-title">Análisis Consolidado</h3>
+                <p class="card-description">
+                    Análisis estratégico abril 2026 con datos corregidos, duplicados eliminados,
+                    mix óptimo identificado 44.5%/55.5%, y estrategia de convergencia precios.
+                </p>
+                <a href="docs/ANALISIS_CONSOLIDADO_ABRIL_2026.md" class="btn">
+                    Ver Análisis
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3 class="card-title">Estrategia Dual-Marca</h3>
+                <p class="card-description">
+                    Flying Pumas: Reducir de $67.58 a ~$50/lb. Creativa CCD: Aumentar de $7.99 a ~$15/lb.
+                    Convergencia hacia $34.50/lb promedio ponderado.
+                </p>
+                <a href="dashboard/flying_pumas_executive_dashboard_fixed.html#strategy" class="btn-secondary btn">
+                    Ver Estrategia
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🏔️</div>
+                <h3 class="card-title">Oportunidades Críticas</h3>
+                <p class="card-description">
+                    BLACK GOLD ($254K), GRAND CRU ($53K), SHENZHEN GREATSHOT ($66K).
+                    Clientes consolidados para conversión premium y rebalanceo portfolio.
+                </p>
+                <a href="dashboard/flying_pumas_executive_dashboard_fixed.html#clients" class="btn-secondary btn">
+                    Ver Oportunidades
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📋</div>
+                <h3 class="card-title">Documentación Técnica</h3>
+                <p class="card-description">
+                    Ecosistema completo: CRM triple integración, fichas técnicas Libertario v2.0,
+                    workflows N8N, y arquitectura sistemas productivos.
+                </p>
+                <a href="CLAUDE.md" class="btn-secondary btn">
+                    Ver Documentación
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔄</div>
+                <h3 class="card-title">Estado del Proyecto</h3>
+                <p class="card-description">
+                    Dashboard ejecutivo desplegado, datos consolidados y validados,
+                    estrategia de rebalanceo definida. GitHub Pages operativo.
+                </p>
+                <a href="#status" class="btn-secondary btn">
+                    Ver Estado
+                </a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Flying Pumas Coffee Farm - Panama Geisha Specialty Coffee</p>
+            <a href="https://github.com/Fsardi19/flying-pumas-ai-strategy" class="github-link">
+                <span>🐙</span>
+                Ver en GitHub
+            </a>
+            <p style="margin-top: 1rem; font-size: 0.875rem;">
+                Última actualización: Abril 2026 | Datos consolidados y validados | Generado con Claude Code
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Flying Pumas AI Strategy Hub - Versión Actualizada loaded');
+
+            // Track clicks para analytics
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const cardTitle = this.closest('.card')?.querySelector('.card-title')?.textContent;
+                    console.log('Card clicked:', cardTitle, '- URL:', this.href);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
